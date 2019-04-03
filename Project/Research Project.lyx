@@ -1,0 +1,949 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Econ 712 Heterogeneous Agent Macro Research Project
+\end_layout
+
+\begin_layout Author
+Jincheng(Eric) Huang
+\end_layout
+
+\begin_layout Part
+Partial Equilibrium
+\end_layout
+
+\begin_layout Section
+The Model
+\end_layout
+
+\begin_layout Standard
+Consider an individual with preferences
+\begin_inset Formula 
+\[
+u(c)=E_{0}\sum_{t=0}^{T}\beta^{t}U(c_{t})
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $\beta=\frac{1}{1+\rho}\in(0,1).$
+\end_inset
+
+ The individual might either be finitely or infinitely lived.
+ The individual has stochastic income process 
+\begin_inset Formula $\{y_{t}\}_{t=0}^{T}$
+\end_inset
+
+ where 
+\begin_inset Formula $y_{t}\in Y=\{y_{1},...,y_{N}\}.$
+\end_inset
+
+ The income process is Markov.
+ Let 
+\begin_inset Formula $\pi(y'|y)$
+\end_inset
+
+ denote the probability that tomorrow's endowment takes the value 
+\begin_inset Formula $y'$
+\end_inset
+
+ if today's endowment take the value 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ For now suppose that the interest rate 
+\begin_inset Formula $r$
+\end_inset
+
+ is exogenously given.
+ The agents' budget constraint at period 
+\begin_inset Formula $t$
+\end_inset
+
+ reads as
+\begin_inset Formula 
+\[
+c_{t}+a_{t+1}=y_{t}+(1+r)a_{t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We assume that preferences can be represented by a CRRA period utility function
+ 
+\begin_inset Formula 
+\[
+U(c)=\frac{c^{1-\sigma}-1}{1-\sigma}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+.
+ With respect to the time discount rate, let us assume that agents, in the
+ presence of certainty equivalence, would choose a declining consumption
+ prole, i.e.
+ assume that 
+\begin_inset Formula $\rho>r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With respect to the income process we consider a discretized version of
+ a simple AR(1) process.
+ In particular, suppose log-income follows a process
+\begin_inset Formula 
+\[
+\log(y_{t+1})=\delta\log(y_{t})+(1-\delta^{2})^{\frac{1}{2}}\epsilon_{t}
+\]
+
+\end_inset
+
+where the persistence parameter 
+\begin_inset Formula $\delta\in[0,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon_{t}$
+\end_inset
+
+ is normally distributed with zero mean and variance 
+\begin_inset Formula $\sigma_{y}^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With respect to the borrowing constraints, we consider a tight borrowing
+ constraint 
+\begin_inset Formula $a_{t+1}\geq0$
+\end_inset
+
+.
+ For the initial conditions, the initial asset position of the household
+ is 
+\begin_inset Formula $a_{0}=0$
+\end_inset
+
+ and the initial income realization is
+\begin_inset Formula $y_{0}=y_{l}$
+\end_inset
+
+; where 
+\begin_inset Formula $y_{l}$
+\end_inset
+
+ is the lowest realization the Markov chain can take.
+\end_layout
+
+\begin_layout Section
+Exercises
+\end_layout
+
+\begin_layout Enumerate
+Formulate the problem of the agent recursively, i.e.
+ write down Bellman's equation and derive the stochastic Euler equation.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: Let 
+\begin_inset Formula $V(a,y,t)$
+\end_inset
+
+ be the value function for an agent with current asset 
+\begin_inset Formula $a$
+\end_inset
+
+, income 
+\begin_inset Formula $y$
+\end_inset
+
+ at age 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The Bellman equation for the agent's problem is as follows:
+\begin_inset Formula 
+\begin{align}
+V(a,y,t) & =\max_{c,a'}U(c)+\beta\sum_{y'|y}\pi(y'|y)V(a',y',t+1)\nonumber \\
+\text{s.t. }c+a' & =y+(1+r)a\label{eq:budget constraint}\\
+a' & \geq0\label{eq:borrowing constraint}
+\end{align}
+
+\end_inset
+
+and assuming the agent lives finitely many periods, the terminal condition
+ is given by
+\begin_inset Formula 
+\[
+V(a,y,T)=U(y+(1+r)a)
+\]
+
+\end_inset
+
+since the agent will consume all the wealth with the lack of bequest motives.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\lambda_{t}$
+\end_inset
+
+ be the Lagrange Multiplier for the budget constraint 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:budget constraint"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{t}$
+\end_inset
+
+ be the Lagrange Multiplier for the borrowing constraint 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:borrowing constraint"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, then we can derive the following FOCs:
+\begin_inset Formula 
+\begin{align}
+[c] & U'(c)=\lambda_{t}\label{eq:FOC c}\\{}
+[a'] & \beta\sum_{y'|y}\pi(y'|y)V_{a'}(a',y',t+1)=\lambda_{t}+\mu_{t}\label{eq:FOC a'}
+\end{align}
+
+\end_inset
+
+together with the Envelope condition
+\begin_inset Formula 
+\begin{equation}
+V_{a}(a,y,t)=(1+r)\lambda_{t}.\label{eq:Envelope}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assuming that the borrowing constraint doesn't bind, i.e.
+ 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+.
+ Then by plugging 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOC c"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Envelope"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and moving forward by one period, we have
+\begin_inset Formula 
+\[
+V_{a'}(a',y',t+1)=(1+r)U'(c').
+\]
+
+\end_inset
+
+Plugging this equation into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOC a'"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and replacing the RHS using 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOC c"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we get the Euler equation
+\begin_inset Formula 
+\begin{align}
+\beta\sum_{y'|y}\pi(y'|y)(1+r)U'(c') & =U'(c)\nonumber \\
+\Rightarrow\beta\sum_{y'|y}\pi(y'|y)(1+r)\frac{U'(c')}{U'(c)} & =1\label{eq: Euler equation}
+\end{align}
+
+\end_inset
+
+Plugging in the CRRA utility then we have
+\begin_inset Formula 
+\[
+\beta\sum_{y'|y}\pi(y'|y)(1+r)\Big(\frac{c'}{c}\Big)^{-\sigma}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+For 
+\begin_inset Formula $T=\infty$
+\end_inset
+
+ write a computer program that computes the value function 
+\begin_inset Formula $v(a,y)$
+\end_inset
+
+ and the policy functions 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $c(a,y)$
+\end_inset
+
+ for given choice of the utility function as well as given parameterization
+ of the income process.
+ Also include in your program a subroutine that simulates paths of consumption
+ and asset holdings for the first 61 periods of an agent's life.
+ Structure your program in such a way that it easy to generate M simulated
+ paths of 60 periods, where M might be a reasonably large number (that is,
+ we might want to simulate 1000 or so households, for 60 time periods each).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: The function that computes the value function and policy functions is
+ called 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+calc_value_policy.m
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ and is located in the subfolder 
+\begin_inset Quotes eld
+\end_inset
+
+Code/Functions
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For 
+\begin_inset Formula $T=\infty$
+\end_inset
+
+, it uses value function iteration with grid search to calculate the value
+ and policy functions.
+ The algorithm converges when the 
+\begin_inset Formula $L^{\infty}$
+\end_inset
+
+ norm of the difference in value functions between two consecutive steps
+ is less than some tolerance level.
+\end_layout
+
+\begin_layout Standard
+The function which simulates paths of consumption and asset holdings is
+ called 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+value_and_policy.m
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ and is located in the subfolder 
+\begin_inset Quotes eld
+\end_inset
+
+Code/Functions
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It uses the policy functions from 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+calc_value_policy.m
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ as inputs, simulates Markov chains for income process and generate consumption
+ and asset paths using these two elements.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Repeat the same exercise for T = 61, (i.e.
+ an economy with finitely lived agents) where now we aim for a sequence
+ of functions 
+\begin_inset Formula $\{v_{t}(a,y);a'_{t}(a,y);c_{t}(a,y)\}_{t=0}^{61}$
+\end_inset
+
+.
+ Remember that here you can iterate backwards from 
+\begin_inset Formula $v_{T+1}(a,y)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $(a,y)\in(A,Y)$
+\end_inset
+
+ .
+ Note that model age 0 should be interpreted as real age 20, so that people
+ live from age 20 to 80 in real time.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: Policy functions, value function and simulations are generated using the
+ same function as in part 2.
+ When the 
+\begin_inset Formula $T$
+\end_inset
+
+ input for 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+calc_value_policy.m
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ is finite, the function iterates backwards from 
+\begin_inset Formula $v_{T+1}(a,y)=0$
+\end_inset
+
+ and uses grid search to find the optimal 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ in each period.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $T=\infty,\,\sigma=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta=0.8$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{y}\in\{0.2,0.4\},\,\rho=4\%$
+\end_inset
+
+ and 
+\begin_inset Formula $r=2\%$
+\end_inset
+
+.
+ Plot the consumption function.
+ Interpret the difference between small and large income shocks.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Repeat question 4., but for finite horizon 
+\begin_inset Formula $T=61$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+:
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Do you get a hump in life cycle consumption when you simulate the model
+ with 
+\begin_inset Formula $T=61$
+\end_inset
+
+ (to answer this question for the model take the average of a fairly large
+ (
+\begin_inset Formula $\geq1000$
+\end_inset
+
+) number of simulated time paths for 
+\begin_inset Formula $T=61$
+\end_inset
+
+)? Experiment with potential ways to cure your failure or to explain your
+ success (in particular, look at your income process, the borrowing constraint
+ and the relation between 
+\begin_inset Formula $\rho$
+\end_inset
+
+ and 
+\emph on
+r
+\emph default
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution:
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+For your favorite parameterization of 6, now assume that the deterministic
+ part 
+\begin_inset Formula $\bar{y}_{t}$
+\end_inset
+
+ of the income process for the first 45 years is defined by the first column
+ of the file incprofile.txt.
+ Thus the income process of the household is now given by 
+\begin_inset Formula 
+\[
+y_{t}=\bar{y}_{t}\tilde{y}_{t}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\log(\tilde{y}_{t})$
+\end_inset
+
+ follows the AR(1) process defined above.
+ For years 46-61 assume that the household receives social security benefits
+ equal 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to times average income at age 45, that is 
+\begin_inset Formula 
+\[
+\bar{y}_{t}=\theta\bar{y}_{45}
+\]
+
+\end_inset
+
+ with 
+\begin_inset Formula $\theta=0.7$
+\end_inset
+
+.
+ In addition, introduce mortality risk into the model with 
+\begin_inset Formula $T=61$
+\end_inset
+
+.
+ The conditional probability 
+\begin_inset Formula $\psi_{j}$
+\end_inset
+
+ of surviving from age 
+\begin_inset Formula $j$
+\end_inset
+
+ to
+\begin_inset Formula $j+1$
+\end_inset
+
+ is given by the 
+\begin_inset Formula $j$
+\end_inset
+
+-th row of the file survs.txt.
+ Therefore the effective time discount factor of a household of age 
+\begin_inset Formula $j$
+\end_inset
+
+ for 
+\begin_inset Formula $j+1$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\psi_{j}\beta$
+\end_inset
+
+.
+ Also assume that there are no annuity markets (that is, the household cannot
+ insure against this mortality risk).
+ However, social security pays benefits as long as the household survives.
+ Repeat question 6 and compare your results.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The file consprofile.txt contains an empirical life cycle prole of non-durable
+ consumption (deflated by family size) that Fernandez-Villaverde and Krueger
+ (2007) estimated from CEX consumption data.
+ The data are for ages 22 to 88, in quarter year increments, and the first
+ observation is normalized to 1.
+ The model in part 7 delivers a mean consumption prole (the average across
+ a large number of simulations), for age 20 to 80, in yearly increments.
+ Compare the empirical and the model-generated consumption profile.
+ What could you do to improve the fit between the model and the data?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+: 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In this part we assess the degree of consumption insurance.
+ One popular measure of consumption insurance due to Blundell, Pistaferri
+ and Preston (2008) is consumption insurance coefficient:
+\begin_inset Formula 
+\[
+\phi=1-\frac{Cov(\Delta\log(c_{it}),\Delta\log(y_{it}))}{Var(\Delta\log(y_{it}))}
+\]
+
+\end_inset
+
+where the covariance and the variance in the formula are cross-sectional
+ moments.
+ Use your simulated data for either the infinite or finite horizon economy
+ to calculate this coefficient, and document how it varies with the persistence
+ of the income process : That is, compute the coefficient in an economy
+ with 
+\begin_inset Formula $\delta=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta=0.99$
+\end_inset
+
+.
+ Since you do this for the life cycle economy, the insurance coefficients
+ will vary quite strongly with age (see Kaplan and Violante, 2010), and
+ thus compute the consumption insurance coefficient for each age separately
+ (by using simulated data for that specific age only).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Solution
+\emph default
+:
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Computing Stationary Equilibria in the Aiyagari Model
+\end_layout
+
+\begin_layout Enumerate
+Incorporate your programs from before for 
+\begin_inset Formula $T=1$
+\end_inset
+
+ into general equilibrium to compute equilibria for the Aiyagari (1994 QJE)
+ economy.
+ In particular, the algorithm goes like this
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Guess an interest rate 
+\begin_inset Formula $r\in(-\delta,\rho)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use the first order conditions for the firm to determine 
+\begin_inset Formula $K(r)$
+\end_inset
+
+ and 
+\begin_inset Formula $w(r)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Solve the household problem for given 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $w(r)$
+\end_inset
+
+.
+ Here you will use your programs from project 1
+\end_layout
+
+\begin_layout Enumerate
+Use the optimal decision rule 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ together with the exogenous Markov chain 
+\begin_inset Formula $\pi$
+\end_inset
+
+ to find an invariant distribution associated with 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ For this you better first check that 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ intersects the 45-degree line for 
+\begin_inset Formula $a$
+\end_inset
+
+ large enough.
+ Note that if you have discretized the state space for assets, finding r
+\begin_inset Formula $\Phi_{r}$
+\end_inset
+
+ amounts to finding the eigenvector (normalized to length one) associated
+ with the largest eigenvalue of the transition matrix 
+\begin_inset Formula $Q$
+\end_inset
+
+ generated by 
+\begin_inset Formula $a'(a,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Compute
+\begin_inset Formula 
+\[
+Ea(r)=\int a'(a,y)d\Phi_{r}
+\]
+
+\end_inset
+
+Again, if you have discretized the state space, the integral really is a
+ sum
+\end_layout
+
+\begin_layout Enumerate
+Compute
+\begin_inset Formula 
+\[
+d(r)=K(r)-Ea(r)
+\]
+
+\end_inset
+
+If 
+\begin_inset Formula $d(r)=0$
+\end_inset
+
+ you have found a stationary recursive equilibrium, if not, update your
+ guess for 
+\begin_inset Formula $r$
+\end_inset
+
+ and start with 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
